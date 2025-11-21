@@ -11,14 +11,14 @@ import lombok.Data;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_usuario;
+    private Long idusuario;
     
     private String nome;
     private String email;
     private String senha;
     private String cpf;
     private String telefone;
-    private String e_paciente;
+    private boolean epaciente;
 
 
 }
