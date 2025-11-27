@@ -21,29 +21,43 @@ public class ConsultaController {
     @Autowired ConsultaRepository consultaRepository;
     @PostMapping("/api/solicitar")
     public String postsolicitar() {
-        return null;
+        return consultaRepository.e(consultaRepository);
     }
     @PostMapping("/api/cancelar")
-    public String postCancelarConsultas() {
-        return null;
+    public String postCancelarConsultas(PathVariable long Id){
+        if (!consultaRepository.existeById(id)) {
+            return "Consulta não encontrada.";
+    }   consultaRepository.deleteById(id);
+        return "Consulta cancelada com sucesso.";
     }
     @PostMapping("/api/confirmar")
-    public String postConfirmar() {
-        return null;
-    }
+    public Consulta postConfirmar(@PathVariable long id) {
+        Consulta consulta = consultaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Consulta não encontrada"));
+
+        consulta.setStatusconsulta("CONFIRMADA");
+        return consultaRepository.save(consulta);
+
     @PostMapping("/api/recusar")
-    public String postRecusar() {
-        return null;
-    }
+    public Consulta postRecusar(@PathVariable long id) {
+        Consulta consulta = consultaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Consulta não encontrada"));
+
+        consulta.setStatusconsulta("RECUSADA");
+        return consultaRepository.save(consulta);
+}
     @GetMapping
     public  List<Consulta> listar() {
         return consultaRepository.findAll();
     }
     @PutMapping("/{id}")
-    public Consulta atualizar(@PathVariable long id, @RequestBody Consulta consulta){
+    public Consulta atualizar(@PathVariable long id, @RequestBody Consulta consulta) {
+        consulta.setIdconsulta(id);
         return consultaRepository.save(consulta);
-    }
+        
     
     
     
+}
+}
 }
