@@ -20,26 +20,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class ConsultaController {
     @Autowired ConsultaRepository consultaRepository;
     @PostMapping("/api/solicitar")
-    public String postsolicitar() {
-        return consultaRepository.e(consultaRepository);
+    public Consulta postsolicitar(@RequestBody Consulta consulta) {
+        consulta.setStatusconsulta("SOLICITADA");
+        return consultaRepository.save(consulta);
     }
     @PostMapping("/api/cancelar")
-    public String postCancelarConsultas(PathVariable long Id){
+    public String postCancelarConsultas(PathVariable Long id){
         if (!consultaRepository.existeById(id)) {
             return "Consulta não encontrada.";
     }   consultaRepository.deleteById(id);
         return "Consulta cancelada com sucesso.";
     }
     @PostMapping("/api/confirmar")
-    public Consulta postConfirmar(@PathVariable long id) {
+    public Consulta postConfirmaConsultar(@PathVariable long id) {
         Consulta consulta = consultaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Consulta não encontrada"));
 
         consulta.setStatusconsulta("CONFIRMADA");
         return consultaRepository.save(consulta);
+    }
 
     @PostMapping("/api/recusar")
-    public Consulta postRecusar(@PathVariable long id) {
+    public Consulta postRecusarConsulta(@PathVariable long id) {
         Consulta consulta = consultaRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Consulta não encontrada"));
 
@@ -47,17 +49,16 @@ public class ConsultaController {
         return consultaRepository.save(consulta);
 }
     @GetMapping
-    public  List<Consulta> listar() {
+    public  List<Consulta> listaConsultasr() {
         return consultaRepository.findAll();
     }
     @PutMapping("/{id}")
-    public Consulta atualizar(@PathVariable long id, @RequestBody Consulta consulta) {
+    public Consulta atualizarConsulta(@PathVariable long id, @RequestBody Consulta consulta) {
         consulta.setIdconsulta(id);
         return consultaRepository.save(consulta);
         
     
     
     
-}
 }
 }

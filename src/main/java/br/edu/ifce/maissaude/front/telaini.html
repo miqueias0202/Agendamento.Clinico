@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Consultas</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- MENU SUPERIOR -->
+    <header class="topbar">
+        <div class="logo-area">
+            <img src="logo.png" alt="Logo">
+        </div>
+
+        <nav class="menu">
+            <a href="#">Página inicial</a>
+            <a href="#">Agendar consultas</a>
+            <a href="#">Configurações</a>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main>
+
+        <!-- HISTÓRICO -->
+        <section class="container">
+            <h1>histórico de consultas</h1>
+            <p class="sub">Confira ou cancele as consultas abaixo</p>
+
+            <!-- CARD 1 -->
+            <div class="card">
+                <img src="cardio.jpg" class="card-img">
+                <div class="card-info">
+                    <h3>Cardiologista</h3>
+                    <p>27/10/2025 às 09:00h</p>
+                    <button>Cancelar consulta</button>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card">
+                <img src="pediatra.jpg" class="card-img">
+                <div class="card-info">
+                    <h3>Pediatra</h3>
+                    <p>07/11/2025 às 15:00h</p>
+                    <button>Cancelar consulta</button>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="card">
+                <img src="clinico.jpg" class="card-img">
+                <div class="card-info">
+                    <h3>Clínico geral</h3>
+                    <p>11/12/2025 às 10:00h</p>
+                    <button>Cancelar consulta</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALENDÁRIO -->
+        <section class="container">
+            <h1>Seu calendario do mês</h1>
+
+            <div class="calendar">
+                <div class="calendar-header">
+                    <span class="prev">&lt;</span>
+                    <h2>Setembro 2025</h2>
+                    <span class="next">&gt;</span>
+                </div>
+
+                <table id="calendar-table">
+                    <thead>
+                        <tr>
+                            <th>DOM</th><th>SEG</th><th>TER</th><th>QUA</th><th>QUI</th><th>SEX</th><th>SÁB</th>
+                        </tr>
+                    </thead>
+
+                    <!-- Corpo do calendário preenchido pelo JS -->
+                    <tbody id="calendar-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+        <div class="footer-left">+Saúde</div>
+
+        <div class="footer-columns">
+            <div class="col"><h4>Tópico</h4><p>Página</p><p>Página</p><p>Página</p><p>Página</p></div>
+            <div class="col"><h4>Tópico</h4><p>Página</p><p>Página</p><p>Página</p><p>Página</p></div>
+            <div class="col"><h4>Tópico</h4><p>Página</p><p>Página</p><p>Página</p><p>Página</p></div>
+        </div>
+
+        <div class="social">• • •</div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="calendar.js"></script>
+
+</body>
+</html>
