@@ -1,6 +1,7 @@
 package br.edu.ifce.maissaude.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,50 +17,59 @@ import br.edu.ifce.maissaude.repository.AgendamentoRepository;
 @RestController
 @RequestMapping("/api/agendamento")
 public class AgendamentoController {
+
     @Autowired
     private AgendamentoRepository agendamentoRepository;
+
     @GetMapping
-    public List<Agendamento> listar( ) {
-        return agendamentoRepository.findAll();
-         if(lista.isEmpty()){
-            return Agendamento.status(204).body("Nenhum agendamento encontrado.");
+    public ResponseEntity<?> listar() {
+
+        List<Agendamento> lista = agendamentoRepository.findAll();
+
+        if (lista.isEmpty()) {
+            return ResponseEntity.noContent().build();
         }
 
-        return Agendamento.ok(lista);
+        return ResponseEntity.ok(lista);
     }
+
     @PostMapping
-    public  Agendamento adicionar(@RequestBody Agendamento agendamento) {
-        return agendamentoRepository.save(agendamento);
+    public ResponseEntity<?> adicionar(@RequestBody Agendamento agendamento) {
+
         if (agendamento.getUsuario() == null) {
-            return Agendamento.badRequest().body("É obrigatório informar o paciente (usuário).");
+            return ResponseEntity.badRequest()
+                    .body("É obrigatório informar o paciente (usuário).");
         }
 
         if (agendamento.getMedico() == null) {
-            return Agendamento.badRequest().body("É obrigatório informar o médico.");
+            return ResponseEntity.badRequest()
+                    .body("É obrigatório informar o médico.");
         }
 
         if (agendamento.getData() == null) {
-            return Agendamento.badRequest().body("A data da consulta é obrigatória.");
+            return ResponseEntity.badRequest()
+                    .body("A data da consulta é obrigatória.");
         }
 
         if (agendamento.getHorario() == null) {
-            return Agendamento.badRequest().body("O horário da consulta é obrigatório.");
+            return ResponseEntity.badRequest()
+                    .body("O horário da consulta é obrigatório.");
         }
-         Optional<Agendamento> existente = agendamentoRepository
-                .findByMedicoIdmedicoAndDataAndHorario(
+
+        Optional<Agendamento> existente =
+                agendamentoRepository.findByMedicoIdmedicoAndDataAndHorario(
                         agendamento.getMedico().getIdmedico(),
                         agendamento.getData(),
                         agendamento.getHorario()
                 );
-                 if (existente.isPresent()) {
+
+        if (existente.isPresent()) {
             return ResponseEntity.status(409)
-            .body("O médico já possui uma consulta marcada neste dia e horário.");
+                    .body("O médico já possui uma consulta marcada neste dia e horário.");
         }
 
         Agendamento salvo = agendamentoRepository.save(agendamento);
 
-        return Agendamento.ok(salvo);
+        return ResponseEntity.ok(salvo);
     }
-
-
 }
