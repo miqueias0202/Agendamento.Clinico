@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Sistema de Agendamento</title>
+<link rel="stylesheet" href="agendamento.css">
+</head>
+<body>
+
+<header class="top">
+    <img class="logo" src="https://via.placeholder.com/45">
+    <button>Voltar para tela inicial</button>
+    <button>Configurações</button>
+</header>
+
+<main>
+
+<section class="selectors">
+
+<!-- CALENDÁRIO -->
+<div class="calendar-box">
+    <label>Selecione um dia para sua consulta</label>
+
+    <div class="calendar">
+        <div class="month">
+            <button onclick="changeMonth(-1)">◀</button>
+            <span id="monthYear">Setembro 2025</span>
+            <button onclick="changeMonth(1)">▶</button>
+        </div>
+
+        <div class="weekdays">
+            <span>DOM</span><span>SEG</span><span>TER</span>
+            <span>QUA</span><span>QUI</span><span>SEX</span><span>SÁB</span>
+        </div>
+
+        <div id="days" class="days"></div>
+    </div>
+</div>
+
+<!-- HORA -->
+<div class="time-box">
+    <label>Selecione um horário</label>
+
+    <div class="time">
+        <div>
+            <span>Hour</span>
+            <input id="hour" type="number" value="20">
+        </div>
+
+        :
+        <div>
+            <span>Minute</span>
+            <input id="minute" type="number" value="00">
+        </div>
+
+        <div class="ampm">
+            <button id="am" class="ampm-btn" onclick="setAMPM('AM')">AM</button>
+            <button id="pm" class="ampm-btn active" onclick="setAMPM('PM')">PM</button>
+        </div>
+
+        <div class="buttons">
+            <button class="dark">Cancel</button>
+            <button class="dark" onclick="confirmTime()">OK</button>
+        </div>
+    </div>
+</div>
+
+</section>
+
+<button class="confirm">Confirmar</button>
+
+<section class="doctors-section">
+
+<h3>Médicos disponíveis</h3>
+<p>Selecione a data e horário acima, em seguida o médico que deseja marcar a consulta.</p>
+
+<div class="doctor">
+    <img src="https://via.placeholder.com/55">
+    <div>
+        <b>Cardiologista</b>
+        <p>Dr. Carlos Andrade</p>
+        <small>R$ 159,00</small>
+    </div>
+    <button onclick="schedule('Cardiologista')">Agendar consulta</button>
+</div>
+
+<div class="doctor">
+    <img src="https://via.placeholder.com/55">
+    <div>
+        <b>Pediatra</b>
+        <p>Drª Ana Paula Nogueira</p>
+        <small>R$ 139,00</small>
+    </div>
+    <button onclick="schedule('Pediatra')">Agendar consulta</button>
+</div>
+
+<div class="doctor">
+    <img src="https://via.placeholder.com/55">
+    <div>
+        <b>Clínico Geral</b>
+        <p>Dr. Pedro Alves</p>
+        <small>R$ 149,90</small>
+    </div>
+    <button onclick="schedule('Clínico Geral')">Agendar consulta</button>
+</div>
+
+<div class="doctor">
+    <img src="https://via.placeholder.com/55">
+    <div>
+        <b>Neurologista</b>
+        <p>Drª Livy Leal</p>
+        <small>R$ 199,00</small>
+    </div>
+    <button onclick="schedule('Neurologista')">Agendar consulta</button>
+</div>
+
+</section>
+
+<button class="finish">Solicitar agendamento</button>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

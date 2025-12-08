@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configurações do usuário</title>
+  <link rel="stylesheet" href="configuracao.css">
+</head>
+<body>
+
+  <!-- TOPO -->
+  <header class="topbar">
+    <div class="top-inner">
+      <img src="logo.png" class="logo">
+      <nav class="top-nav">
+        <button>Voltar para tela inicial</button>
+        <button>Agendar consultas</button>
+        <button>Configurações</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="title">Configurações do usuario</h1>
+
+    <section class="section">
+      <div class="section-title">Alterar senha</div>
+
+      <div class="card small-card">
+        <label>Nova senha</label>
+        <input type="password" placeholder="Value">
+
+        <label>Confirme sua senha</label>
+        <input type="password" placeholder="Value">
+
+        <button class="btn-black">Salvar nova senha</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Dados do paciente</div>
+
+      <div class="card">
+        <div class="patient">
+          <img src="https://cdn-icons-png.flaticon.com/512/456/456212.png" class="patient-icon">
+          <div>
+            <div class="patient-name">Amanda Sousa</div>
+            <div class="patient-text">amandasousa123@gmail.com</div>
+            <div class="patient-text">(88) 99125-9898</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Exclusão da conta</div>
+
+      <div class="card delete-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" class="delete-icon">
+
+        <div>
+          <div class="delete-title">Exclusão de cadastro</div>
+          <p class="delete-text">
+            Essa ação será irreversível após a confirmação, você perderá todos os seus agendamentos
+          </p>
+
+          <button class="btn-black small-btn">Excluir cadastro</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

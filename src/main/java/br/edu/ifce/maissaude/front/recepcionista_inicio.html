@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Médico</title>
+<link rel="stylesheet" href="recepcionista_inicio.css">
+</head>
+<body>
+
+<!-- MENU SUPERIOR -->
+<header>
+    <nav class="menu">
+        <button>Página inicial</button>
+        <button>Alterar profissionais</button>
+        <button>Configurações</button>
+    </nav>
+</header>
+
+
+<div class="container">
+
+    <!-- COLUNA AGENDAMENTOS -->
+    <section class="col">
+        <h1>Pendência<br>agendamentos</h1>
+
+        <!-- CARD -->
+        <div class="card">
+            <img src="https://via.placeholder.com/120" alt="Foto médico">
+            <div class="info">
+                <h2>Cardiologista</h2>
+                <p>27/10/2025 às 09:00h<br>
+                Dr. Carlos Andrade<br>
+                Paciente Maria Alves<br>
+                (88) 90000-0909</p>
+                <button class="btn">Confirmar agendamento</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/120" alt="Foto médico">
+            <div class="info">
+                <h2>Pediatra</h2>
+                <p>07/11/2025 às 15:00h<br>
+                Dr. Ana Paula Nogueira<br>
+                Paciente Nicolas Ferreira<br>
+                (87) 1234-567</p>
+                <button class="btn">Confirmar agendamento</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/120" alt="Foto médico">
+            <div class="info">
+                <h2>Clínico geral</h2>
+                <p>11/12/2025 às 10:00h<br>
+                Dr. Pedro Alves<br>
+                Paciente Anonísia Pereira<br>
+                (88) 4002-8922</p>
+                <button class="btn">Confirmar agendamento</button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- COLUNA CANCELAMENTOS -->
+    <section class="col">
+        <h1>Pendência<br>cancelamentos</h1>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/120" alt="Foto médico">
+            <div class="info">
+                <h2>Cardiologista</h2>
+                <p>01/10/2025 às 07:00h<br>
+                Dr. Carlos Andrade<br>
+                Paciente Yone Alves<br>
+                (88) 8765-8909</p>
+                <button class="btn">Confirmar cancelamento</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/120" alt="Foto médico">
+            <div class="info">
+                <h2>Pediatra</h2>
+                <p>07/11/2025 às 13:00h<br>
+                Dr. Ana Paula Nogueira<br>
+                Paciente Luna Pereira<br>
+                (89) 65433-9900</p>
+                <button class="btn">Confirmar cancelamento</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/120" alt="Foto médico">
+            <div class="info">
+                <h2>Clínico geral</h2>
+                <p>11/12/2025 às 10:50h<br>
+                Dr. Pedro Alves<br>
+                Paciente Rayssa Santos<br>
+                (23) 90009-7878</p>
+                <button class="btn">Confirmar cancelamento</button>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<!-- AJUSTAR -->
+<div class="bottom-wrapper">
+
+    <div class="adjust-box">
+        <h3>Ajustar dias disponíveis</h3>
+        <div class="calendar">
+            <div class="cal-header">
+                <button>&lt;</button>
+                <span>Setembro 2025</span>
+                <button>&gt;</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>DOM</th><th>SEG</th><th>TER</th>
+                        <th>QUA</th><th>QUI</th><th>SEX</th><th>SÁB</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td></td><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+                    <tr><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td></tr>
+                    <tr><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td></tr>
+                    <tr><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td></tr>
+                    <tr><td>27</td><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="adjust-box">
+        <h3>Ajustar horários disponíveis</h3>
+        <div class="time-box">
+            <label>Enter time</label>
+            <div class="time-row">
+                <input type="number" value="20">
+                <input type="number" value="00">
+                <select>
+                    <option>AM</option>
+                    <option selected>PM</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
